@@ -1,4 +1,4 @@
-id,title,movieYear,rating,genre
+id,title,movie_year,rating,genre
 1,The Shawshark Redemption,1994,9.3,DRAMA
 2,The Godfather,1972,9.2,DRAMA
 3,Pulpfiction,1994,8.9,CRIME

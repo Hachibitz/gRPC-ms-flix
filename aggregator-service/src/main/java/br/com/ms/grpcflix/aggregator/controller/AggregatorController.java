@@ -21,7 +21,7 @@ public class AggregatorController {
     }
 
     @PutMapping("/user")
-    public UserResponse setUserGenre(@RequestBody UserGenre userGenre) {
+    public String setUserGenre(@RequestBody UserGenre userGenre) {
         return this.aggregatorService.setUserGenre(userGenre);
     }
 

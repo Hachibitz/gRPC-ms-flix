@@ -42,12 +42,12 @@ public class AggregatorService {
         return movieDTOList;
     }
 
-    public UserResponse setUserGenre(UserGenre userGenre) {
+    public String setUserGenre(UserGenre userGenre) {
         UserGenreUpdateRequest userGenreUpdateRequest = UserGenreUpdateRequest.newBuilder()
                 .setLoginId(userGenre.getLoginId())
                 .setGenre(Genre.valueOf(userGenre.getGenre().toUpperCase()))
                 .build();
         UserResponse userResponse = this.userServiceBlockingStub.updateUserGenre(userGenreUpdateRequest);
-        return userResponse;
+        return "Preferred user genre updated. New choosen genre: " + userResponse.getGenre();
     }
 }
