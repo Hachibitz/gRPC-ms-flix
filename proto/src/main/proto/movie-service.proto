@@ -1,0 +1,24 @@
+syntax="proto3";
+
+option java_package = "br.com.ms.grpc.movie";
+option java_multiple_files = true;
+
+import "common/commons.proto";
+
+message MovieDTO {
+  string title = 1;
+  int32 movieYear = 2;
+  double rating = 3;
+}
+
+message MovieSearchRequest {
+  Genre genre = 1;
+}
+
+message MovieSearchResponse {
+  repeated MovieDTO movie = 1;
+}
+
+service MovieService {
+  rpc getMovies(MovieSearchRequest) returns (MovieSearchResponse);
+}

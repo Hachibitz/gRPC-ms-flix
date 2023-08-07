@@ -1,0 +1,26 @@
+syntax="proto3";
+
+option java_package = "br.com.ms.grpc.user";
+option java_multiple_files = true;
+
+import "common/commons.proto";
+
+message UserSearchRequest {
+  string login_id = 1;
+}
+
+message UserResponse {
+  string login_id = 1;
+  string name = 2;
+  Genre genre = 3;
+}
+
+message UserGenreUpdateRequest {
+  string login_id = 1;
+  Genre genre = 2;
+}
+
+service UserService {
+  rpc getUserGenre(UserSearchRequest) returns (UserResponse);
+  rpc updateUserGenre(UserGenreUpdateRequest) returns (UserResponse);
+}

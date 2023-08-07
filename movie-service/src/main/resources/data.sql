@@ -1,0 +1,2 @@
+DROP TABLE IF EXISTS movie CASCADE;
+CREATE TABLE movie AS SELECT * FROM CSVREAD('classpath:movie.csv');

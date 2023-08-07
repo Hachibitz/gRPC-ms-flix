@@ -1,0 +1,2 @@
+DROP TABLE IF EXISTS users CASCADE;
+CREATE TABLE users AS SELECT * FROM CSVREAD('classpath:user.csv');
